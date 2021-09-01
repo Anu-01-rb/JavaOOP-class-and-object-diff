@@ -1,0 +1,2 @@
+# class and object diff
+
