@@ -1,20 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Midterm Exam : Class and Object Explanation
+ * 
+ * Object-Oriented Programming
+ * 
  */
 package com.anurak.classobjmidtermexam;
 
 /**
  *
- * @author anurak
+ * @author Anurak Yutthanawa 63160015 B.Sc.Computer Science
+ * Faculty of Informatics, BUU.
+ * 
  */
 public class CatRobot {
+    
+/**
+ * cat robot class
+ */
     
     private int height;
     private String color;
     private String name;
     private String gender;
+    
     
     CatRobot(){}
     
@@ -23,7 +31,7 @@ public class CatRobot {
     }    
 
     public void setHeight(int height) throws InterruptedException {
-        if (gender != "M" || gender != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] int<height> must be greater than 0");
+        if (gender.intern() != "M" || gender.intern() != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] int<height> must be greater than 0");
         this.height = height;
     }
 
@@ -38,6 +46,21 @@ public class CatRobot {
     public void setGender(String gender) throws InterruptedException {
         if (gender.intern() != "M" || gender.intern() != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] String<gender> must input only[M/F]");
         this.gender = gender;
+    }
+    
+    public void speak(){
+        if (error());
+        System.out.printf("Hello, My name is %s, I am cat robot from 22nd centuries.\n", this.name);
+    }
+    
+    public void walk(){
+        if (error());
+        System.out.printf("%s is walking.\n", this.name);
+    }
+    
+    public void eat(){
+        if (error());
+        System.out.printf("Yummy! Dorayaki so delicious.\n");
     }
     
     private boolean error(){
