@@ -14,6 +14,10 @@ package com.anurak.classobjmidtermexam;
  * 
  */
 public class Main {
+   
+/**
+ * main program class
+ */
     
     static Main main = new Main();
     
@@ -23,6 +27,7 @@ public class Main {
     
     public static void main(String[] args) {
         main.welcome();
+        
         
     }
 }

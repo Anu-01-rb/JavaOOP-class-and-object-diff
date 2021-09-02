@@ -4,7 +4,9 @@
  * Object-Oriented Programming
  * 
  */
+
 package com.anurak.classobjmidtermexam;
+import java.util.LinkedList;
 
 /**
  *
@@ -22,7 +24,7 @@ public class CatRobot {
     private String color;
     private String name;
     private String gender;
-    
+    private LinkedList<String> gadget = new LinkedList<String>();
     
     CatRobot(){}
     
@@ -31,7 +33,7 @@ public class CatRobot {
     }    
 
     public void setHeight(int height) throws InterruptedException {
-        if (gender.intern() != "M" || gender.intern() != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] int<height> must be greater than 0");
+        if (height <= 0) throw new InterruptedException("[CatRobot : ERROR | INPUT ] int<height> must be greater than 0");
         this.height = height;
     }
 
