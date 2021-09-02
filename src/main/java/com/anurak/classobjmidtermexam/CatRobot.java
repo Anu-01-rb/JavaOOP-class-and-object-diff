@@ -38,17 +38,17 @@ public class CatRobot {
         this.gender = gender;
     }
     
-    private String error(){
-        if (height == 0)        return "[CatRobot : ERROR | 404 ] int<height> Not Found.";
-        if (color == null)      return "[CatRobot : ERROR | 404 ] String<color> Not Found.";
-        if (name == null)       return "[CatRobot : ERROR | 404 ] String<name> Not Found.";
-        if (gender == null)     return "[CatRobot : ERROR | 404 ] String<gender> Not Found.";
-        return "1";
+    private boolean error(){
+        if (height == 0)        throw new NullPointerException("[CatRobot : ERROR | 404 ] int<height> Not Found.");
+        if (color == null)      throw new NullPointerException("[CatRobot : ERROR | 404 ] String<color> Not Found.");
+        if (name == null)       throw new NullPointerException("[CatRobot : ERROR | 404 ] String<name> Not Found.");
+        if (gender == null)     throw new NullPointerException("[CatRobot : ERROR | 404 ] String<gender> Not Found.");
+        return false;
     }
     
     @Override
     public String toString(){
-        if (error() != "1") return error();
+        if (error());
         return "";
     }
     
