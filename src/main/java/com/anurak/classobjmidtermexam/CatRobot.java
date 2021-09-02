@@ -19,8 +19,24 @@ public class CatRobot {
     CatRobot(){}
     
     CatRobot(String name){
-        this.name = name;
+        setName(name);
     }    
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     
     private String error(){
         if (height == 0)        return "[CatRobot : ERROR | 404 ] int<height> Not Found.";
