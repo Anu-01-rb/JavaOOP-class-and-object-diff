@@ -1,13 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Midterm Exam : Class and Object Explanation
+ * 
+ * Object-Oriented Programming
+ * 
  */
+
 package com.anurak.classobjmidtermexam;
 
 /**
  *
- * @author anurak
+ * @author Anurak Yutthanawa 63160015 B.Sc.Computer Science
+ * Faculty of Informatics, BUU.
+ * 
  */
 public class Main {
     
@@ -19,5 +23,6 @@ public class Main {
     
     public static void main(String[] args) {
         main.welcome();
+        
     }
 }
