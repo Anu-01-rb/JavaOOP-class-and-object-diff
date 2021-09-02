@@ -22,27 +22,29 @@ public class CatRobot {
         setName(name);
     }    
 
-    public void setHeight(int height) {
+    public void setHeight(int height) throws InterruptedException {
+        if (gender != "M" || gender != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] int<height> must be greater than 0");
         this.height = height;
     }
 
     public void setColor(String color) {
-        this.color = color;
+        this.color = color.intern();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.intern();
     }
 
-    public void setGender(String gender) {
+    public void setGender(String gender) throws InterruptedException {
+        if (gender.intern() != "M" || gender.intern() != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] String<gender> must input only[M/F]");
         this.gender = gender;
     }
     
     private boolean error(){
-        if (height == 0)        throw new NullPointerException("[CatRobot : ERROR | 404 ] int<height> Not Found.");
-        if (color == null)      throw new NullPointerException("[CatRobot : ERROR | 404 ] String<color> Not Found.");
-        if (name == null)       throw new NullPointerException("[CatRobot : ERROR | 404 ] String<name> Not Found.");
-        if (gender == null)     throw new NullPointerException("[CatRobot : ERROR | 404 ] String<gender> Not Found.");
+        if (height == 0)        throw new NullPointerException("[CatRobot : ERROR | DATA ] int<height> Not Found.");
+        if (color == null)      throw new NullPointerException("[CatRobot : ERROR | DATA ] String<color> Not Found.");
+        if (name == null)       throw new NullPointerException("[CatRobot : ERROR | DATA ] String<name> Not Found.");
+        if (gender == null)     throw new NullPointerException("[CatRobot : ERROR | DATA ] String<gender> Not Found.");
         return false;
     }
     
