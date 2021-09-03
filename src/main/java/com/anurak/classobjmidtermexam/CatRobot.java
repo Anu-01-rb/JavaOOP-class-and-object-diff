@@ -6,6 +6,7 @@
  */
 
 package com.anurak.classobjmidtermexam;
+
 import java.util.LinkedList;
 
 /**
@@ -17,7 +18,9 @@ import java.util.LinkedList;
 public class CatRobot {
     
 /**
+ * 
  * cat robot class
+ * 
  */
     
     private int height;
@@ -26,9 +29,12 @@ public class CatRobot {
     private String gender;
     private LinkedList<String> gadget = new LinkedList<String>();
     
-    CatRobot(){}
+    CatRobot(){
+        initialGadget();
+    }
     
     CatRobot(String name){
+        initialGadget();
         setName(name);
     }    
 
@@ -65,12 +71,37 @@ public class CatRobot {
         System.out.printf("Yummy! Dorayaki so delicious.\n");
     }
     
+    public void addGadget(String gad){
+        this.gadget.add(gad);
+    }
+    
+    public void showGadget(){ //Show all gadget does object have
+        for(int i = 1 ; i <= this.gadget.size() ; i++){
+            System.out.printf("%d. %s\n",i , this.gadget.get(i-1));
+        }
+    }
+    
+    public void getGadget(int index){
+        System.out.printf("Here you're!! This is %s\n", this.gadget.get(index-1));
+    }
+    
     private boolean error(){
         if (height == 0)        throw new NullPointerException("[CatRobot : ERROR | DATA ] int<height> Not Found.");
         if (color == null)      throw new NullPointerException("[CatRobot : ERROR | DATA ] String<color> Not Found.");
         if (name == null)       throw new NullPointerException("[CatRobot : ERROR | DATA ] String<name> Not Found.");
         if (gender == null)     throw new NullPointerException("[CatRobot : ERROR | DATA ] String<gender> Not Found.");
         return false;
+    }
+    
+    private void initialGadget(){
+        this.gadget.add("Anywhere Door");
+        this.gadget.add("Take-copter");
+        this.gadget.add("Time Machine");
+        this.gadget.add("Big Light and Small Light");
+        this.gadget.add("Time Furoshiki");
+        this.gadget.add("Translation Jelly");
+        this.gadget.add("Obtaining Bag");
+        this.gadget.add("What-If Phone Booth");
     }
     
     @Override

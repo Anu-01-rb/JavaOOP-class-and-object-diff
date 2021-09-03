@@ -13,6 +13,12 @@ package com.anurak.classobjmidtermexam;
  * Faculty of Informatics, BUU.
  * 
  */
+
+/**
+ * STORY:
+ *  Once in Japan. Have a robot cat
+ * 
+ */
 public class Main {
    
 /**
