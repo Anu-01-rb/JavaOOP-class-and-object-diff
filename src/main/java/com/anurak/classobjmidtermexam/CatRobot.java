@@ -8,6 +8,7 @@
 package com.anurak.classobjmidtermexam;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 /**
  *
@@ -28,6 +29,7 @@ public class CatRobot {
     private String name;
     private String gender;
     private LinkedList<String> gadget = new LinkedList<String>();
+    private Scanner sc = new Scanner(System.in);
     
     CatRobot(){
         initialGadget();
@@ -81,8 +83,9 @@ public class CatRobot {
         }
     }
     
-    public void getGadget(int index){
-        System.out.printf("Here you're!! This is %s\n", this.gadget.get(index-1));
+    public void getGadget(){
+        showGadget();
+        System.out.printf("Here you're!! This is %s\n", this.gadget.get(sc.nextInt()-1));
     }
     
     private boolean error(){
