@@ -54,8 +54,11 @@ public class CatRobot {
     }
 
     public void setGender(String gender) throws InterruptedException {
-        if (gender.intern() != "M" || gender.intern() != "F") throw new InterruptedException("[CatRobot : ERROR | INPUT ] String<gender> must input only[M/F]");
-        this.gender = gender;
+        if (gender.equals("M") || gender.equals("F")){
+            this.gender = gender;
+            return;
+        }
+        throw new InterruptedException("[CatRobot : ERROR | INPUT ] String<gender> must input only[M/F]");
     }
     
     public void speak(){
@@ -78,17 +81,21 @@ public class CatRobot {
     }
     
     public void showGadget(){ //Show all gadget does object have
+        System.out.printf("%S have these gadget\n",this.name);
         for(int i = 1 ; i <= this.gadget.size() ; i++){
-            System.out.printf("%d. %s\n",i , this.gadget.get(i-1));
+            System.out.printf("\t%d. %s\n",i , this.gadget.get(i-1));
         }
+        System.out.println("------------");
     }
     
-    public void getGadget(){
+    public String getGadget(){
+        System.out.println("Choose these gadget");
         showGadget();
-        System.out.printf("Here you're!! This is %s\n", this.gadget.get(sc.nextInt()-1));
+        
+        return this.gadget.get(sc.nextInt()-1);
     }
     
-    private boolean error(){
+    private boolean error() {
         if (height == 0)        throw new NullPointerException("[CatRobot : ERROR | DATA ] int<height> Not Found.");
         if (color == null)      throw new NullPointerException("[CatRobot : ERROR | DATA ] String<color> Not Found.");
         if (name == null)       throw new NullPointerException("[CatRobot : ERROR | DATA ] String<name> Not Found.");
@@ -110,7 +117,7 @@ public class CatRobot {
     @Override
     public String toString(){
         if (error());
-        return "";
+        return String.format("CAT ROBOT INFORMATION:\n\tName: %s\n\tColor: %s\n\tHeight: %d\n\tGender: %s\n", this.name, this.color, this.height, this.gender);
     }
     
 }
