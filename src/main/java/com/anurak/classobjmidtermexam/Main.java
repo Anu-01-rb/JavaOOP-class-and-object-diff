@@ -16,7 +16,8 @@ package com.anurak.classobjmidtermexam;
 
 /**
  * STORY:
- *  Once in Japan. Have a robot cat
+ *  Once in Japan. Have a robot cat name doraemon and doraemi
+ *  Both. are intelligence robot come with amazing gadget
  * 
  */
 public class Main {
@@ -49,6 +50,15 @@ public class Main {
         
         doraemon.setGender("M");
         doraemi.setGender("F");
+        
+        doraemon.eat();
+        doraemi.eat();
+        
+        doraemon.speak();
+        doraemi.speak();
+        
+        doraemon.walk();
+        doraemi.walk();
         
         doraemon.showGadget();
         doraemi.showGadget();
